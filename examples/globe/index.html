@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Satellite objects</title>
+<style>body{margin:0;background:#08131e;color:#eaf7ff;font:16px system-ui}main{max-width:1200px;margin:auto;padding:24px}h1{margin:0 0 8px}p{color:#acc7d9}#viewer{height:65vh;min-height:320px;border:1px solid #34546a;border-radius:12px;overflow:hidden}nav{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:16px 0}button,input,select{font:inherit;padding:7px;background:#15334a;color:inherit;border:1px solid #4b718b;border-radius:5px}#status{white-space:pre-wrap}input[type=text],input:not([type]){min-width:230px}a{color:#8bdcff}</style></head>
+<body><main><h1>Satellite objects</h1><p id="source">Synthetic fixture. Spherical reference Earth; illustrative symbol sizes. Drag to orbit; scroll to zoom.</p>
+<div id="viewer"></div><nav><button id="toggle">Hide objects</button><button id="fixture">Use fixture</button><button id="remove">Remove plugin</button><label>Group <select id="group"><option value="stations">Stations</option><option value="visual">Brightest</option><option value="science-education">Science / education</option></select></label>
+<label>Feed endpoint <input id="endpoint" value="/api/satellites"></label><button id="live">Use live feed</button></nav><pre id="status" aria-live="polite"></pre>
+</main><script type="module" src="./main.ts"></script></body></html>

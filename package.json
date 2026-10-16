@@ -1,0 +1,79 @@
+{
+  "name": "@found-in-space/satellites",
+  "version": "0.1.0-alpha.0",
+  "description": "Independent satellites data and object extension with optional Three.js and SkyKit adapters",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "NOTICE.md",
+    "docs",
+    "examples"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./three": {
+      "types": "./dist/three.d.ts",
+      "import": "./dist/three.js"
+    },
+    "./skykit": {
+      "types": "./dist/skykit.d.ts",
+      "import": "./dist/skykit.js"
+    },
+    "./server": {
+      "types": "./dist/server.d.ts",
+      "import": "./dist/server.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "npm run build && tsc --noEmit",
+    "test": "npm run build && vitest run",
+    "test:package": "npm run build && node scripts/verify-package.mjs",
+    "example:dev": "npm run build && vite --config examples/vite.config.ts",
+    "example:build": "npm run build && vite build --config examples/vite.config.ts",
+    "prepack": "npm run build",
+    "example:smoke": "npm run build && node scripts/smoke-example.mjs"
+  },
+  "peerDependencies": {
+    "three": "^0.170.0",
+    "@found-in-space/skykit": "^0.3.0-alpha.0"
+  },
+  "peerDependenciesMeta": {
+    "three": {
+      "optional": true
+    },
+    "@found-in-space/skykit": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "three": "0.170.0",
+    "@types/three": "0.170.0",
+    "@found-in-space/skykit": "0.3.0-alpha.0",
+    "@types/node": "22.18.6",
+    "typescript": "5.9.2",
+    "vite": "7.3.6",
+    "vitest": "3.2.7"
+  },
+  "dependencies": {
+    "satellite.js": "6.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Found-in-Space/satellites.git"
+  },
+  "homepage": "https://github.com/Found-in-Space/satellites#readme",
+  "bugs": {
+    "url": "https://github.com/Found-in-Space/satellites/issues"
+  }
+}
